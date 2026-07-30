@@ -48,7 +48,7 @@ export default function Home() {
       <div className="fixed bottom-1/4 right-1/4 w-[500px] h-[500px] bg-blue-900/10 rounded-full blur-[160px] pointer-events-none -z-10" />
 
         {/* LEFT PANEL — EPIC CAMPUS BACKGROUND WITH DARK GRADIENT OVERLAY & GLASS BENTO */}
-        <div className="lg:w-[42%] w-full bg-epic-campus relative overflow-hidden flex flex-col justify-between p-7 lg:p-9 text-white min-h-[520px] lg:min-h-screen">
+        <div className="lg:w-[42%] w-full bg-epic-campus relative overflow-hidden flex flex-col justify-between p-5 lg:p-9 text-white lg:min-h-screen">
           
           {/* Dark Overlay Gradient for high contrast */}
           <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a]/92 via-[#0f172a]/70 to-[#0f172a]/95 z-0 pointer-events-none" />
@@ -66,7 +66,7 @@ export default function Home() {
             </div>
 
             {/* Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-extrabold leading-tight mb-4 drop-shadow-md">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-extrabold leading-tight mb-2 sm:mb-4 drop-shadow-md">
               Campus of <br />
               <em className="italic text-[var(--red-bright)] font-semibold not-italic">Legends.</em>
             </h1>
@@ -77,14 +77,14 @@ export default function Home() {
           </div>
 
           {/* Bottom Section — Event Info Glass Bento */}
-          <div className="relative z-10 w-full mt-8">
+          <div className="relative z-10 w-full mt-8 hidden sm:block">
             <h3 className="text-[10px] font-mono font-semibold tracking-widest text-gray-400 uppercase mb-3">
               Informations sur l&apos;&eacute;v&eacute;nement
             </h3>
 
             {/* Glassmorphism Grid */}
-            <div className="grid grid-cols-2 gap-2.5 mb-6">
-              <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl p-3.5 hover:bg-white/15 transition-all">
+            <div className="grid grid-cols-2 gap-2 sm:gap-2.5 mb-4 sm:mb-6">
+              <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl p-2.5 sm:p-3.5 hover:bg-white/15 transition-all">
                 <div className="flex items-center gap-1.5 mb-1 text-gray-400">
                   <Calendar className="w-3.5 h-3.5 text-[var(--red-bright)]" />
                   <span className="text-[10px] uppercase tracking-wide">Date</span>
@@ -92,7 +92,7 @@ export default function Home() {
                 <p className="text-xs sm:text-sm font-semibold">1er ao&ucirc;t 2026</p>
               </div>
 
-              <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl p-3.5 hover:bg-white/15 transition-all">
+              <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl p-2.5 sm:p-3.5 hover:bg-white/15 transition-all">
                 <div className="flex items-center gap-1.5 mb-1 text-gray-400">
                   <MapPin className="w-3.5 h-3.5 text-blue-400" />
                   <span className="text-[10px] uppercase tracking-wide">Lieu</span>
@@ -100,7 +100,7 @@ export default function Home() {
                 <p className="text-xs sm:text-sm font-semibold">Campus IUMA</p>
               </div>
 
-              <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl p-3.5 hover:bg-white/15 transition-all">
+              <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl p-2.5 sm:p-3.5 hover:bg-white/15 transition-all">
                 <div className="flex items-center gap-1.5 mb-1 text-gray-400">
                   <Timer className="w-3.5 h-3.5 text-amber-400" />
                   <span className="text-[10px] uppercase tracking-wide">Format</span>
@@ -108,7 +108,7 @@ export default function Home() {
                 <p className="text-xs sm:text-sm font-semibold">30 min chrono</p>
               </div>
 
-              <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl p-3.5 hover:bg-white/15 transition-all relative overflow-hidden">
+              <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl p-2.5 sm:p-3.5 hover:bg-white/15 transition-all relative overflow-hidden">
                 <div className="absolute -right-3 -top-3 w-10 h-10 bg-[var(--red-bright)]/20 rounded-full blur-lg" />
                 <div className="flex items-center gap-1.5 mb-1 text-gray-400">
                   <Trophy className="w-3.5 h-3.5 text-yellow-400" />
