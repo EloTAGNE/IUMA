@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus of Legends - IUMA</title>
+    
+    <!-- Intégration de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter (UI) & Playfair Display (Prestige/Legends) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Configuration personnalisée pour Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            red: '#D92D20',   /* Rouge E-sport / Académique */
+                            navy: '#101828',  /* Bleu Nuit */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Image de fond pour le panneau gauche - Style Épique / Nuit / Campus */
+        .bg-epic-campus {
+            background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1200&auto=format&fit=crop'); 
+            background-size: cover;
+            background-position: center;
+        }
+        
+        /* Custom scrollbar pour le panneau droit si besoin sur petit écran */
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background-color: #E5E7EB; border-radius: 10px; }
+    </style>
+</head>
+
+<body class="bg-[#0b0f19] min-h-screen flex items-center justify-center p-4 lg:p-8 antialiased selection:bg-brand-red selection:text-white">
+
+    <!-- CONTENEUR PRINCIPAL (La carte) -->
+    <div class="bg-white rounded-[32px] lg:rounded-[40px] p-2 flex flex-col lg:flex-row w-full max-w-[1200px] min-h-[780px] shadow-2xl relative overflow-hidden">
+
+        <!-- ========================================== -->
+        <!-- PANNEAU GAUCHE (Image Sombre & Infos) -->
+        <!-- ========================================== -->
+        <div class="lg:w-[42%] h-full rounded-[24px] lg:rounded-[32px] bg-epic-campus relative overflow-hidden flex flex-col justify-between p-8 lg:p-10 text-white">
+            
+            <!-- Overlay dégradé sombre pour lisibilité -->
+            <div class="absolute inset-0 bg-gradient-to-b from-[#0f172a]/90 via-[#0f172a]/60 to-[#0f172a]/95 z-0"></div>
+
+            <!-- Contenu Haut -->
+            <div class="relative z-10">
+                <div class="inline-flex items-center gap-2 mb-8 border border-white/20 bg-white/5 backdrop-blur-sm px-3 py-1.5 rounded-full">
+                    <div class="w-1.5 h-1.5 rounded-full bg-brand-red animate-pulse"></div>
+                    <span class="text-[9px] font-bold tracking-[0.2em] uppercase text-gray-200">
+                        Institut Universitaire Marie-Albert
+                    </span>
+                </div>
+
+                <h1 class="text-5xl lg:text-6xl font-serif font-extrabold leading-tight mb-4 drop-shadow-lg">
+                    Campus of <br>
+                    <span class="italic text-brand-red font-semibold">Legends.</span>
+                </h1>
+                <p class="text-gray-300 text-sm lg:text-base font-light leading-relaxed max-w-sm">
+                    Découvre ton campus. Trouve ton équipe. Entre dans la légende.
+                </p>
+            </div>
+
+            <!-- Contenu Bas (Infos événement + Footer) -->
+            <div class="relative z-10 w-full mt-10">
+                
+                <h3 class="text-xs font-semibold tracking-widest text-gray-400 uppercase mb-4">Informations sur l’événement</h3>
+                
+                <!-- Grille Glassmorphism -->
+                <div class="grid grid-cols-2 gap-3 mb-8">
+                    <div class="bg-white/10 backdrop-blur-md border border-white/10 rounded-xl p-4 hover:bg-white/15 transition">
+                        <i class="fa-regular fa-calendar text-brand-red mb-2 text-lg"></i>
+                        <p class="text-[10px] text-gray-400 uppercase tracking-wide">Date</p>
+                        <p class="text-sm font-semibold mt-0.5">1er août 2026</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md border border-white/10 rounded-xl p-4 hover:bg-white/15 transition">
+                        <i class="fa-solid fa-location-dot text-brand-red mb-2 text-lg"></i>
+                        <p class="text-[10px] text-gray-400 uppercase tracking-wide">Lieu</p>
+                        <p class="text-sm font-semibold mt-0.5">Campus IUMA</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md border border-white/10 rounded-xl p-4 hover:bg-white/15 transition">
+                        <i class="fa-solid fa-stopwatch text-brand-red mb-2 text-lg"></i>
+                        <p class="text-[10px] text-gray-400 uppercase tracking-wide">Format</p>
+                        <p class="text-sm font-semibold mt-0.5">30 min chrono</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md border border-white/10 rounded-xl p-4 hover:bg-white/15 transition relative overflow-hidden">
+                        <div class="absolute -right-4 -top-4 w-12 h-12 bg-brand-red/20 rounded-full blur-xl"></div>
+                        <i class="fa-solid fa-trophy text-brand-red mb-2 text-lg"></i>
+                        <p class="text-[10px] text-gray-400 uppercase tracking-wide">Événement</p>
+                        <p class="text-sm font-semibold mt-0.5">Pré-L1 Official</p>
+                    </div>
+                </div>
+
+                <div class="pt-4 border-t border-white/10 flex justify-between items-center">
+                    <span class="text-[10px] text-gray-400 uppercase tracking-widest font-medium">Propulsé par Xkorienta</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- PANNEAU DROIT (Formulaire & Gamification) -->
+        <!-- ========================================== -->
+        <div class="lg:w-[58%] h-full flex flex-col px-6 py-8 lg:px-12 lg:py-10 relative overflow-y-auto custom-scrollbar">
+            
+            <!-- Onglets (Tabs) -->
+            <div class="flex justify-center w-full mb-8">
+                <div class="bg-gray-100 p-1 rounded-full inline-flex">
+                    <button class="px-6 py-2 bg-white text-brand-navy shadow-sm rounded-full text-xs font-bold uppercase tracking-wide transition">
+                        S'inscrire
+                    </button>
+                    <button class="px-6 py-2 text-gray-500 hover:text-brand-navy rounded-full text-xs font-bold uppercase tracking-wide transition">
+                        Hall of Fame
+                    </button>
+                </div>
+            </div>
+
+            <!-- Niveaux du classement (Gamification) -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-2 mb-10 w-full max-w-[600px] mx-auto">
+                <div class="border border-gray-200 rounded-xl p-3 flex flex-col items-center justify-center text-center bg-gray-50/50 hover:border-gray-300 transition">
+                    <div class="w-6 h-6 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center mb-1"><i class="fa-solid fa-compass text-[10px]"></i></div>
+                    <h4 class="text-[10px] font-bold text-gray-800 leading-tight mb-1">Explorateur du Campus</h4>
+                    <span class="text-[9px] font-semibold text-gray-500 bg-white px-2 py-0.5 rounded-full border border-gray-200">0–40 pts</span>
+                </div>
+                <div class="border border-gray-200 rounded-xl p-3 flex flex-col items-center justify-center text-center bg-gray-50/50 hover:border-gray-300 transition">
+                    <div class="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mb-1"><i class="fa-solid fa-shield text-[10px]"></i></div>
+                    <h4 class="text-[10px] font-bold text-gray-800 leading-tight mb-1">Ambassadeur IUMA</h4>
+                    <span class="text-[9px] font-semibold text-gray-500 bg-white px-2 py-0.5 rounded-full border border-gray-200">45–70 pts</span>
+                </div>
+                <div class="border border-gray-200 rounded-xl p-3 flex flex-col items-center justify-center text-center bg-gray-50/50 hover:border-gray-300 transition">
+                    <div class="w-6 h-6 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center mb-1"><i class="fa-solid fa-star text-[10px]"></i></div>
+                    <h4 class="text-[10px] font-bold text-gray-800 leading-tight mb-1">Légende du Campus</h4>
+                    <span class="text-[9px] font-semibold text-gray-500 bg-white px-2 py-0.5 rounded-full border border-gray-200">75–90 pts</span>
+                </div>
+                <div class="border border-brand-red/30 rounded-xl p-3 flex flex-col items-center justify-center text-center bg-red-50/30 hover:border-brand-red/50 transition relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-4 h-4 bg-yellow-400 rotate-45 transform translate-x-2 -translate-y-2"></div>
+                    <div class="w-6 h-6 rounded-full bg-yellow-100 text-yellow-600 flex items-center justify-center mb-1"><i class="fa-solid fa-crown text-[10px]"></i></div>
+                    <h4 class="text-[10px] font-bold text-gray-800 leading-tight mb-1">Grand Maître des Légendes</h4>
+                    <span class="text-[9px] font-semibold text-brand-red bg-white px-2 py-0.5 rounded-full border border-red-100">95–100 pts</span>
+                </div>
+            </div>
+
+            <!-- Formulaire -->
+            <div class="flex-1 flex flex-col justify-center w-full max-w-[420px] mx-auto">
+                
+                <div class="mb-8 text-center">
+                    <span class="text-[11px] text-brand-red font-bold uppercase tracking-[0.15em]">Formulaire officiel</span>
+                    <h2 class="text-3xl lg:text-4xl font-extrabold text-brand-navy tracking-tight mt-1">Entre dans la légende.</h2>
+                </div>
+
+                <form class="w-full flex flex-col gap-5">
+                    
+                    <!-- Nom Complet -->
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-600 uppercase mb-2 ml-1">Nom complet</label>
+                        <input type="text" placeholder="Ex : Jean Dupont" class="w-full border border-gray-300 rounded-xl px-4 py-3.5 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy transition bg-gray-50/50 focus:bg-white">
+                    </div>
+
+                    <!-- Identifiant (avec Toggle) -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2 ml-1">
+                            <label class="block text-[11px] font-bold text-gray-600 uppercase">Identifiant</label>
+                            <!-- Toggle Téléphone / Email -->
+                            <div class="flex bg-gray-100 rounded p-0.5">
+                                <button type="button" class="px-2 py-1 bg-white shadow-sm rounded text-[9px] font-bold text-gray-800 uppercase tracking-wide">Téléphone</button>
+                                <button type="button" class="px-2 py-1 text-gray-500 hover:text-gray-800 rounded text-[9px] font-bold uppercase tracking-wide transition">Email</button>
+                            </div>
+                        </div>
+                        <input type="text" placeholder="6XXXXXXXX" class="w-full border border-gray-300 rounded-xl px-4 py-3.5 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy transition bg-gray-50/50 focus:bg-white">
+                    </div>
+
+                    <!-- Mot de passe -->
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-600 uppercase mb-2 ml-1">Mot de passe</label>
+                        <div class="relative">
+                            <input type="password" placeholder="8 caractères minimum" class="w-full border border-gray-300 rounded-xl px-4 py-3.5 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy transition bg-gray-50/50 focus:bg-white pr-16">
+                            <button type="button" class="absolute inset-y-0 right-0 px-4 flex items-center text-[11px] font-bold text-gray-400 hover:text-brand-navy transition uppercase tracking-wide">
+                                Voir
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Bouton Submit -->
+                    <button type="submit" class="w-full bg-brand-navy hover:bg-[#1a2538] text-white rounded-xl px-4 py-4 text-sm font-bold transition mt-2 shadow-[0_8px_20px_-6px_rgba(16,24,40,0.5)] flex justify-center items-center gap-2 group">
+                        REJOINDRE LE CAMPUS 
+                        <i class="fa-solid fa-arrow-right-long text-xs opacity-70 group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </form>
+
+                <!-- Lien Connexion -->
+                <div class="mt-6 text-xs font-medium text-gray-500 text-center">
+                    Déjà un compte ? <a href="#" class="text-brand-red font-bold hover:underline ml-1">Se connecter</a>
+                </div>
+            </div>
+
+            <!-- Footer Droite -->
+            <div class="w-full mt-auto pt-8 flex justify-center text-center">
+                <p class="text-[10px] text-gray-400 font-medium">
+                    © 2026 Institut Universitaire Marie-Albert · Tous droits réservés.
+                </p>
+            </div>
+            
+        </div>
+    </div>
+
+</body>
+</html>
