@@ -1,7 +1,7 @@
 /** IUMA Campus of Legends — Configuration */
 
 // Xkorienta platform URL
-export const XKORIENTA_URL = (process.env.NEXT_PUBLIC_XKORIENTA_URL || "http://localhost:3001").replace(/\/+$/, "")
+export const XKORIENTA_URL = (process.env.NEXT_PUBLIC_XKORIENTA_URL || "https://xkorienta.com/api").replace(/\/+$/, "")
 
 // Invitation token for Pre-L1 class
 export const INVITATION_TOKEN = process.env.NEXT_PUBLIC_INVITATION_TOKEN
