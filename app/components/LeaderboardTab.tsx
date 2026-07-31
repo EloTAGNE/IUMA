@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Trophy, TrendingUp, TrendingDown, Sparkles, Crown, Medal } from "lucide-react"
+import { Trophy, TrendingUp, TrendingDown, Sparkles, Crown, Medal, CheckCircle, Pencil } from "lucide-react"
 import { XKORIENTA_URL, EXAM_ID, POLL_INTERVAL } from "../config"
 
 interface LeaderboardEntry {
@@ -12,6 +12,8 @@ interface LeaderboardEntry {
     score: number
     maxScore: number
     badge: { label: string; emoji?: string } | null
+    isCompleted: boolean
+    progress: string // e.g. "12/20"
     submittedAt: string | null
 }
 
@@ -218,17 +220,31 @@ export function LeaderboardTab() {
                                         {entry.avatarInitial}
                                     </div>
 
-                                    {/* Name & Badge */}
+                                    {/* Name, Badge & Progress */}
                                     <div className="flex-1 min-w-0">
-                                        <p className={`text-sm truncate ${isTop3 ? "text-[#1d1d1f] font-bold" : "text-slate-800 font-medium"}`}>
-                                            {entry.studentName}
-                                        </p>
-                                        {entry.badge && (
-                                            <p className="text-[10px] font-mono tracking-wider uppercase text-[var(--red-bright)] font-semibold flex items-center gap-1">
-                                                <Sparkles className="w-3 h-3" />
-                                                <span>{entry.badge.label}</span>
+                                        <div className="flex items-center gap-1.5">
+                                            <p className={`text-sm truncate ${isTop3 ? "text-[#1d1d1f] font-bold" : "text-slate-800 font-medium"}`}>
+                                                {entry.studentName}
                                             </p>
-                                        )}
+                                            {entry.isCompleted ? (
+                                                <CheckCircle className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                                            ) : (
+                                                <Pencil className="w-3 h-3 text-amber-500 shrink-0 animate-pulse" />
+                                            )}
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            {entry.badge && (
+                                                <span className="text-[10px] font-mono tracking-wider uppercase text-[var(--red-bright)] font-semibold inline-flex items-center gap-0.5">
+                                                    <Sparkles className="w-3 h-3" />
+                                                    {entry.badge.label}
+                                                </span>
+                                            )}
+                                            {!entry.isCompleted && (
+                                                <span className="text-[10px] font-mono text-amber-600 bg-amber-100 px-1.5 py-0.5 rounded-full font-medium">
+                                                    {entry.progress}
+                                                </span>
+                                            )}
+                                        </div>
                                     </div>
 
                                     {/* Trend indicator */}
