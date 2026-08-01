@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { Calendar, MapPin, Timer, Sparkles, ArrowRight, X } from "lucide-react"
@@ -9,6 +10,11 @@ interface IntroSplashScreenProps {
 }
 
 export function IntroSplashScreen({ onComplete }: IntroSplashScreenProps) {
+
+    useEffect(() => {
+        const timer = setTimeout(onComplete, 5000)
+        return () => clearTimeout(timer)
+    }, [onComplete])
 
     return (
         <motion.div
