@@ -15,7 +15,7 @@ export function IntroSplashScreen({ onComplete }: IntroSplashScreenProps) {
             initial={{ opacity: 1 }}
             exit={{ opacity: 0, scale: 0.98, filter: "blur(12px)" }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-50 flex flex-col justify-between bg-[#0b0f19] text-white p-4 sm:p-8 lg:p-10 select-none overflow-hidden"
+            className="fixed inset-0 z-50 flex flex-col justify-between bg-[#0b0f19] text-white p-4 sm:p-8 lg:p-10 select-none overflow-y-auto custom-scrollbar"
         >
             {/* Ambient Background Glows */}
             <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-red-600/15 rounded-full blur-[180px] pointer-events-none" />
@@ -40,7 +40,7 @@ export function IntroSplashScreen({ onComplete }: IntroSplashScreenProps) {
             </div>
 
             {/* MAIN CONTENT — Apple Keynote Intro */}
-            <div className="relative z-10 flex flex-col items-center text-center max-w-3xl mx-auto my-auto py-8">
+            <div className="relative z-10 flex flex-col items-center text-center max-w-3xl mx-auto my-auto py-4 sm:py-8">
                 {/* Ceramic Logo Seal */}
                 <motion.div
                     initial={{ scale: 0.8, opacity: 0 }}
@@ -48,7 +48,7 @@ export function IntroSplashScreen({ onComplete }: IntroSplashScreenProps) {
                     transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                     className="mb-8 relative"
                 >
-                    <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-3xl bg-white p-3 shadow-[0_0_50px_rgba(255,255,255,0.15)] border border-white/40 flex items-center justify-center transition-transform hover:scale-105 duration-300">
+                    <div className="w-20 h-20 sm:w-28 sm:h-28 rounded-3xl bg-white p-3 shadow-[0_0_50px_rgba(255,255,255,0.15)] border border-white/40 flex items-center justify-center transition-transform hover:scale-105 duration-300">
                         <Image
                             src="/logo.jpg"
                             alt="IUMA Logo"
@@ -78,7 +78,7 @@ export function IntroSplashScreen({ onComplete }: IntroSplashScreenProps) {
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.6, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-3xl sm:text-5xl lg:text-7xl font-serif font-extrabold tracking-tight text-white leading-[1.08] mb-5"
+                    className="text-4xl sm:text-5xl lg:text-7xl font-serif font-extrabold tracking-tight text-white leading-[1.08] mb-3 sm:mb-5"
                 >
                     Campus of{" "}
                     <em className="not-italic bg-gradient-to-r from-[var(--red-bright)] via-red-500 to-amber-500 bg-clip-text text-transparent font-serif italic">
@@ -92,7 +92,7 @@ export function IntroSplashScreen({ onComplete }: IntroSplashScreenProps) {
                     initial={{ y: 15, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.45 }}
-                    className="text-base sm:text-xl text-gray-300 font-light max-w-xl mb-10 leading-relaxed"
+                    className="text-sm sm:text-xl text-gray-300 font-light max-w-xl mb-6 sm:mb-10 leading-relaxed px-2"
                 >
                     D&eacute;couvre ton campus. Trouve ton &eacute;quipe. Entre dans la l&eacute;gende.
                 </motion.p>
@@ -102,7 +102,7 @@ export function IntroSplashScreen({ onComplete }: IntroSplashScreenProps) {
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.6, delay: 0.55 }}
-                    className="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full max-w-2xl mb-10"
+                    className="hidden sm:grid grid-cols-3 gap-3 w-full max-w-2xl mb-10"
                 >
                     <div className="bg-white/5 backdrop-blur-md border border-white/10 p-3.5 rounded-2xl flex flex-col items-center gap-1">
                         <Calendar className="w-4 h-4 text-[var(--red-bright)]" />
